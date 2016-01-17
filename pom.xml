@@ -44,7 +44,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <groupId>com.github.sebhoss.utils</groupId>
   <artifactId>generic-types</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <inceptionYear>2016</inceptionYear>
   <url>https://github.com/sebhoss/generic-types</url>
   <name>Generic Types</name>
