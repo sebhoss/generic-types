@@ -41,5 +41,6 @@ and then go crazy with this:
 [source,java]
 ----
 final Type type = generic(List.class, generic(Map.class, subtype(Number.class), supertype(String.class)));
-// represents List<Map<? extends Number, ? super String>>
 ----
+
+which represents a `List<Map<? extends Number, ? super String>>`.
