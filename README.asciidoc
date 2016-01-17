@@ -12,11 +12,11 @@ image:https://img.shields.io/coveralls/{github-org}/{project-name}/master.svg?st
 image:https://scan.coverity.com/projects/{coverity-project}/badge.svg["Coverity Scan Result", link="https://scan.coverity.com/projects/{coverity-project}"]
 image:https://badges.gitter.im/Join%20Chat.svg["Gitter", link="https://gitter.im/{github-org}/{project-name}"]
 
-This Java library provides a factory to create generic `java.lang.reflect.Type` variations, such as `Map<String, Object>`. Use it as follows:
+This Java library provides a factory to create generic `java.lang.reflect.Type` variations, such as `Map<String, Point>`. Use it as follows:
 
 [source,java]
 ----
-final Type genericMap = GenericTypes.generic(Map.class, String.class, Object.class);
+final Type genericMap = GenericTypes.generic(Map.class, String.class, Point.class);
 final Type genericList = GenericTypes.generic(List.class, String.class);
 ----
 
@@ -40,7 +40,7 @@ and then go crazy with this:
 
 [source,java]
 ----
-final Type type = generic(List.class, generic(Map.class, subtype(Number.class), supertype(String.class)));
+final Type type = generic(List.class, generic(Map.class, subtype(Number.class), supertype(Point.class)));
 ----
 
-which represents a `List<Map<? extends Number, ? super String>>`.
+which represents a `List<Map<? extends Number, ? super Point>>`.
