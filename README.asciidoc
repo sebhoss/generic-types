@@ -20,7 +20,7 @@ final Type genericMap = GenericTypes.generic(Map.class, String.class, Object.cla
 final Type genericList = GenericTypes.generic(List.class, String.class);
 ----
 
-Super- and subtypes such as <code>List&lt;? super Point&gt;</code> or <code>List&lt;? extends Number&gt;</code> can be created in the following way:
+Super- and subtypes such as `List<? super Point>` or `List<? extends Number>` can be created in the following way:
 
 [source,java]
 ----
@@ -41,5 +41,5 @@ and then go crazy with this:
 [source,java]
 ----
 final Type type = generic(List.class, generic(Map.class, subtype(Number.class), supertype(String.class)));
-// represents List&lt;Map&lt;? extends Number, ? super String&gt;&gt;
+// represents List<Map<? extends Number, ? super String>>
 ----
