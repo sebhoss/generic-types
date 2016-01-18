@@ -14,6 +14,16 @@ cache:
 after_success:
 - mvn clean test jacoco:report coveralls:report
 
+addons:
+  coverity_scan:
+    project:
+      name: "sebhoss/generic-types"
+      description: "Build submitted via Travis CI"
+    notification_email: mail@shoss.de
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: master
+
 # see http://docs.travis-ci.com/user/notifications/
 notifications:
   webhooks:
