@@ -16,7 +16,7 @@ image:https://scan.coverity.com/projects/{coverity-project}/badge.svg["Coverity 
 image:https://badges.gitter.im/Join%20Chat.svg["Gitter", link="https://gitter.im/{github-org}/{project-name}"]
 
 
-This https://www.java.com[Java] library provides a factory to create generic `java.lang.reflect.Type` variations, such as `Map<String, Point>`.
+This https://www.java.com[Java] library provides a factory to create generic `java.lang.reflect.Type` variations, such as `Map<Number, Point>`.
 
 === Features
 
@@ -31,11 +31,11 @@ All currently required feature are implemented. This project is in maintenance m
 
 [source,java]
 ----
-// Map<String, Point>
-final Type genericMap = GenericTypes.generic(Map.class, String.class, Point.class);
+// Map<Number, Point>
+final Type type = GenericTypes.generic(Map.class, Number.class, Point.class);
 
-// List<String>
-final Type genericList = GenericTypes.generic(List.class, String.class);
+// List<Number>
+final Type type = GenericTypes.generic(List.class, Number.class);
 ----
 
 Super- and subtypes such as `List<? super Point>` or `List<? extends Number>` can be created in the following way:
@@ -43,10 +43,10 @@ Super- and subtypes such as `List<? super Point>` or `List<? extends Number>` ca
 [source,java]
 ----
 // List<? super Point>
-final Type list = GenericTypes.generic(List.class, GenericTypes.supertype(Point.class));
+final Type type = GenericTypes.generic(List.class, GenericTypes.supertype(Point.class));
 
 // List<? extends Number>
-final Type list = GenericTypes.generic(List.class, GenericTypes.subtype(Number.class));
+final Type type = GenericTypes.generic(List.class, GenericTypes.subtype(Number.class));
 ----
 
 Use static imports to shorten the above calls to:
@@ -54,10 +54,10 @@ Use static imports to shorten the above calls to:
 [source,java]
 ----
 // List<? super Point>
-final Type list = generic(List.class, supertype(Point.class));
+final Type type = generic(List.class, supertype(Point.class));
 
 // List<? extends Number>
-final Type list = generic(List.class, subtype(Number.class));
+final Type type = generic(List.class, subtype(Number.class));
 ----
 
 and then go crazy with this:
