@@ -32,3 +32,9 @@ notifications:
     on_success: always  # options: [always|never|change] default: always
     on_failure: always  # options: [always|never|change] default: always
     on_start: never     # options: [always|never|change] default: always
+
+env:
+  global:
+    # exposes 'COVERITY_SCAN_TOKEN'
+    # see https://scan.coverity.com/travis_ci
+    secure: yS4kyl0b96b5vTaqHMD4fLU/tdd9AOfsdXinDWA8fZhxRkwmAAQX+APbh0cSvA2stid22gN7J1Ef5/N6jUVW+V1nCXJ0pyX3GghbLhdGZ04MsGgWpGrrfoXCd2R/cCOvfUVVhwDN9S8FC0A1JNKBJiCSbAu0rPrF0mQd27c2fJMXij4VJKdmy44hhInRrwP1ch+RLGXWXIizHMhfsWd4Du+GlsXYgvJeH5MPgktPXwy8b51fI0m87kUdLX/3ubr416D8M5HdO/GYUpe6TY7NcO/FM4RE+FKaQFzyqkC+QiL+IsRvcchbvJ2QEdYcaA58h7oJkB4GZoy9lRJCSslD1bo7JtlMTrnvS0j8pVOKKHJ+wAoqKsrZ8JHbq4VsdiBra6fCV0l/4K+y9tAOMBlaxbTzs/OblLEFRuwizL2+OaJ1J9L6SYqqhTgYshZTDwoE3bQRqPgikXSHPL4oZk8YOPS7iqqM/MPD9t06iuUYzKkUXahQS/qCnz/VhFdJxqrTvrIg/WX8REctxVlAm/dzGF/S5WgI+AZWwLJzr8w+rOMRVEqHTMrRY5j3pCOKJ/muQzErOAA0AzypIwSV/XNK7+TCyYbaYRq0WcE+R/8QceNa5auT02Pib/Zrixacxvl06YuWPPXJi+d+67n3wtLtap4nO7HbNVhOXCxnQ1DjVKY=
