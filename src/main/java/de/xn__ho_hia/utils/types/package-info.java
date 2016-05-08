@@ -27,4 +27,4 @@
 /**
  * Utilities for {@link java.lang.reflect.Type Types}.
  */
-package com.github.sebhoss.utils.types;
+package de.xn__ho_hia.utils.types;

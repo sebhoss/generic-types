@@ -24,7 +24,7 @@
  *
  * For more information, please refer to <http://unlicense.org>
  */
-package com.github.sebhoss.utils.types;
+package de.xn__ho_hia.utils.types;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -34,10 +34,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.github.sebhoss.warnings.CompilerWarnings;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import de.xn__ho_hia.utils.jdt.CompilerWarnings;
+import de.xn__ho_hia.utils.types.GenericTypes;
 
 /**
  *
@@ -159,18 +160,24 @@ public class GenericTypesTest {
     }
 
     /**
-     * Ensures that the constructor of the {@link GenericTypes} class is private.
+     * Ensures that the constructor of the {@link GenericTypes} class is
+     * private.
      * <p>
-     * The class should never be instantiated. Instead use the static factory methods to construct storage units.
+     * The class should never be instantiated. Instead use the static factory
+     * methods to construct storage units.
      *
      * @throws NoSuchMethodException
-     *             Should not fail in case the StorageUnits class has a constructor..
+     *             Should not fail in case the StorageUnits class has a
+     *             constructor..
      * @throws IllegalAccessException
-     *             Should not fail in case the StorageUnits class has a constructor..
+     *             Should not fail in case the StorageUnits class has a
+     *             constructor..
      * @throws InvocationTargetException
-     *             Should not fail in case the StorageUnits class has a constructor..
+     *             Should not fail in case the StorageUnits class has a
+     *             constructor..
      * @throws InstantiationException
-     *             Should not fail in case the StorageUnits class has a constructor..
+     *             Should not fail in case the StorageUnits class has a
+     *             constructor..
      */
     @Test
     public void shouldDeclarePrivateConstructor()

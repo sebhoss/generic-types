@@ -34,19 +34,19 @@
   <!--                                 PARENT                                  -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <parent>
-    <groupId>com.github.sebhoss</groupId>
-    <artifactId>java-parent</artifactId>
-    <version>2.0.2</version>
+    <groupId>de.xn__ho_hia.maven.parents</groupId>
+    <artifactId>maven-parents-java-stable</artifactId>
+    <version>0.0.0-SNAPSHOT</version>
   </parent>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                               INFORMATIONS                              -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <groupId>com.github.sebhoss.utils</groupId>
+  <groupId>de.xn__ho_hia.utils.types</groupId>
   <artifactId>generic-types</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <inceptionYear>2016</inceptionYear>
-  <url>https://github.com/sebhoss/generic-types</url>
+  <url>http://seb.hoß.de/generic-types</url>
   <name>Generic Types</name>
   <description>Util/factory to create generic types</description>
 
@@ -61,29 +61,11 @@
   </scm>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <!--                                PROPERTIES                               -->
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <properties>
-    <version.bom>2016.01.17</version.bom>
-  </properties>
-
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                               DEPENDENCIES                              -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.github.sebhoss.bom</groupId>
-        <artifactId>auto-managed</artifactId>
-        <version>${version.bom}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>com.github.sebhoss</groupId>
+      <groupId>de.xn__ho_hia.utils.jdt</groupId>
       <artifactId>suppress-warnings</artifactId>
     </dependency>
     <dependency>
@@ -92,33 +74,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <!--                                   BUILD                                 -->
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.pitest</groupId>
-        <artifactId>pitest-maven</artifactId>
-        <configuration>
-          <targetClasses>
-            <param>com.github.sebhoss*</param>
-          </targetClasses>
-          <targetTests>
-            <param>com.github.sebhoss*</param>
-          </targetTests>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.6</version>
-        <configuration>
-          <executable>gpg2</executable>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 
 </project>

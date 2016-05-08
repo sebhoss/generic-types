@@ -24,7 +24,7 @@
  *
  * For more information, please refer to <http://unlicense.org>
  */
-package com.github.sebhoss.utils.types;
+package de.xn__ho_hia.utils.types;
 
 import java.lang.reflect.Type;
 import java.util.Arrays;
