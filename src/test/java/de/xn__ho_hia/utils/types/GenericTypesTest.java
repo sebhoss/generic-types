@@ -37,7 +37,7 @@ import java.util.Set;
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.xn__ho_hia.utils.jdt.CompilerWarnings;
+import de.xn__ho_hia.quality.suppression.CompilerWarnings;
 import de.xn__ho_hia.utils.types.GenericTypes;
 
 /**
