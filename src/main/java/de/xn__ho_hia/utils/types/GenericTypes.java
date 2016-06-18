@@ -31,15 +31,17 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
- * Factory to create generic {@link Type} variations, such as <code>Map&lt;String, Object&gt;</code>. Use it as follows:
+ * Factory to create generic {@link Type} variations, such as
+ * <code>Map&lt;String, Object&gt;</code>. Use it as follows:
  *
  * <pre>
  * final Type genericMap = GenericTypes.generic(Map.class, String.class, Object.class);
  * final Type genericList = GenericTypes.generic(List.class, String.class);
  * </pre>
  *
- * Super- and subtypes such as <code>List&lt;? super Point&gt;</code> or <code>List&lt;? extends Number&gt;</code> can
- * be created in the following way:
+ * Super- and subtypes such as <code>List&lt;? super Point&gt;</code> or
+ * <code>List&lt;? extends Number&gt;</code> can be created in the following
+ * way:
  *
  * <pre>
  * final Type list = GenericTypes.generic(List.class, GenericTypes.supertype(Point.class));
@@ -62,6 +64,10 @@ import java.util.stream.Collectors;
  */
 public final class GenericTypes {
 
+    private GenericTypes() {
+        // factory class
+    }
+
     /**
      * Factory method to create a generic {@link Type}.
      *
@@ -71,7 +77,7 @@ public final class GenericTypes {
      *            The generic type parameters of the outer type.
      * @return A {@link Type} representing the given types.
      */
-    public static final Type generic(final Type type, final Type... types) {
+    public static Type generic(final Type type, final Type... types) {
         return genericType(type, types);
     }
 
@@ -80,9 +86,10 @@ public final class GenericTypes {
      *
      * @param type
      *            The supertype.
-     * @return A {@link Type} representing any given subtype of the supplied supertype.
+     * @return A {@link Type} representing any given subtype of the supplied
+     *         supertype.
      */
-    public static final Type subtype(final Type type) {
+    public static Type subtype(final Type type) {
         return typeExtends(wildcardType(), type);
     }
 
@@ -91,9 +98,10 @@ public final class GenericTypes {
      *
      * @param type
      *            The subtype.
-     * @return A {@link Type} representing any given supertype of the supplied subtype.
+     * @return A {@link Type} representing any given supertype of the supplied
+     *         subtype.
      */
-    public static final Type supertype(final Type type) {
+    public static Type supertype(final Type type) {
         return typeSuper(wildcardType(), type);
     }
 
@@ -119,12 +127,9 @@ public final class GenericTypes {
         return () -> "?"; //$NON-NLS-1$
     }
 
-    private GenericTypes() {
-        // factory class
-    }
-
     /**
-     * Wrapper around {@link Type} in order to be able to create them using lambda expressions (see above)
+     * Wrapper around {@link Type} in order to be able to create them using
+     * lambda expressions (see above)
      */
     @FunctionalInterface
     private static interface LambdaEnabledType extends Type {

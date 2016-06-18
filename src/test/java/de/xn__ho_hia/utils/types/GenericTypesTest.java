@@ -38,7 +38,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import de.xn__ho_hia.quality.suppression.CompilerWarnings;
-import de.xn__ho_hia.utils.types.GenericTypes;
 
 /**
  *
@@ -59,7 +58,7 @@ public class GenericTypesTest {
         final Type type = GenericTypes.generic(genericType, elementType);
 
         // then
-        Assert.assertEquals("java.util.List<java.lang.String>", type.getTypeName());
+        Assert.assertEquals("Types do not match", "java.util.List<java.lang.String>", type.getTypeName());
     }
 
     /**
@@ -76,7 +75,8 @@ public class GenericTypesTest {
         final Type type = GenericTypes.generic(genericType, keyType, valueType);
 
         // then
-        Assert.assertEquals("java.util.Map<java.lang.String, java.lang.String>", type.getTypeName());
+        Assert.assertEquals("Types do not match", "java.util.Map<java.lang.String, java.lang.String>",
+                type.getTypeName());
     }
 
     /**
@@ -92,7 +92,7 @@ public class GenericTypesTest {
         final Type type = GenericTypes.generic(genericType, elementType);
 
         // then
-        Assert.assertEquals("java.util.Set<java.lang.String>", type.getTypeName());
+        Assert.assertEquals("Types do not match", "java.util.Set<java.lang.String>", type.getTypeName());
     }
 
     /**
@@ -108,7 +108,7 @@ public class GenericTypesTest {
         final Type type = GenericTypes.generic(genericType, elementType);
 
         // then
-        Assert.assertEquals("java.util.Set<java.util.Set<java.lang.String>>", type.getTypeName());
+        Assert.assertEquals("Types do not match", "java.util.Set<java.util.Set<java.lang.String>>", type.getTypeName());
     }
 
     /**
@@ -124,7 +124,7 @@ public class GenericTypesTest {
         final Type type = GenericTypes.generic(genericType, elementType);
 
         // then
-        Assert.assertEquals("java.util.List<? extends java.lang.String>", type.getTypeName());
+        Assert.assertEquals("Types do not match", "java.util.List<? extends java.lang.String>", type.getTypeName());
     }
 
     /**
@@ -140,7 +140,7 @@ public class GenericTypesTest {
         final Type type = GenericTypes.generic(genericType, elementType);
 
         // then
-        Assert.assertEquals("java.util.List<? super java.lang.String>", type.getTypeName());
+        Assert.assertEquals("Types do not match", "java.util.List<? super java.lang.String>", type.getTypeName());
     }
 
     /**
@@ -156,7 +156,8 @@ public class GenericTypesTest {
         final Type type = GenericTypes.generic(genericType, elementType);
 
         // then
-        Assert.assertEquals("java.util.List<java.util.List<? super java.lang.String>>", type.getTypeName());
+        Assert.assertEquals("Types do not match", "java.util.List<java.util.List<? super java.lang.String>>",
+                type.getTypeName());
     }
 
     /**
