@@ -10,13 +10,14 @@ import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import de.xn__ho_hia.quality.null_analysis.Nullsafe;
 import de.xn__ho_hia.quality.suppression.CompilerWarnings;
 
 /**
  * Factory to create generic {@link Type} variations, such as <code>Map&lt;String, Object&gt;</code>. Use it as follows:
  *
  * <pre>
- * 
+ *
  * final Type genericMap = GenericTypes.generic(Map.class, String.class, Object.class);
  * final Type genericList = GenericTypes.generic(List.class, String.class);
  * </pre>
@@ -25,7 +26,7 @@ import de.xn__ho_hia.quality.suppression.CompilerWarnings;
  * be created in the following way:
  *
  * <pre>
- * 
+ *
  * final Type list = GenericTypes.generic(List.class, GenericTypes.supertype(Point.class));
  * final Type list = GenericTypes.generic(List.class, GenericTypes.subtype(Number.class));
  * </pre>
@@ -33,7 +34,7 @@ import de.xn__ho_hia.quality.suppression.CompilerWarnings;
  * Use static imports to shorten the above calls to:
  *
  * <pre>
- * 
+ *
  * final Type list = generic(List.class, supertype(Point.class));
  * final Type list = generic(List.class, subtype(Number.class));
  * </pre>
@@ -41,7 +42,7 @@ import de.xn__ho_hia.quality.suppression.CompilerWarnings;
  * and then go crazy with this:
  *
  * <pre>
- * 
+ *
  * final Type type = generic(List.class, generic(Map.class, subtype(Number.class), supertype(String.class)));
  * // represents List&lt;Map&lt;? extends Number, ? super String&gt;&gt;
  * </pre>
@@ -89,9 +90,10 @@ public final class GenericTypes {
     }
 
     private static LambdaEnabledType genericType(final Type type, final Type... types) {
-        return () -> String.format("%1$s<%2$s>", type.getTypeName(), commaDelimited(types));
+        return () -> Nullsafe.nonNull(String.format("%1$s<%2$s>", type.getTypeName(), commaDelimited(types)));
     }
 
+    @SuppressWarnings(CompilerWarnings.NULL)
     private static String commaDelimited(final Type... types) {
         return Arrays.stream(types)
                 .map(Type::getTypeName)
@@ -99,11 +101,11 @@ public final class GenericTypes {
     }
 
     private static LambdaEnabledType typeExtends(final Type left, final Type right) {
-        return () -> String.format("%1$s extends %2$s", left.getTypeName(), right.getTypeName());
+        return () -> Nullsafe.nonNull(String.format("%1$s extends %2$s", left.getTypeName(), right.getTypeName()));
     }
 
     private static LambdaEnabledType typeSuper(final Type left, final Type right) {
-        return () -> String.format("%1$s super %2$s", left.getTypeName(), right.getTypeName());
+        return () -> Nullsafe.nonNull(String.format("%1$s super %2$s", left.getTypeName(), right.getTypeName()));
     }
 
     private static LambdaEnabledType wildcardType() {

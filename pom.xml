@@ -85,6 +85,10 @@
       <groupId>de.xn--ho-hia.quality</groupId>
       <artifactId>suppress-warnings</artifactId>
     </dependency>
+    <dependency>
+      <groupId>de.xn--ho-hia.quality</groupId>
+      <artifactId>null-analysis</artifactId>
+    </dependency>
   </dependencies>
 
 </project>

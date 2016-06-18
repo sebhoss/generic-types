@@ -7,4 +7,5 @@
 /**
  * Utilities for {@link java.lang.reflect.Type Types}.
  */
+@org.eclipse.jdt.annotation.NonNullByDefault
 package de.xn__ho_hia.utils.types;
