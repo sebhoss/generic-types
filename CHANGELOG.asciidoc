@@ -5,9 +5,9 @@
 
 All notable changes to this project will be documented in this file.
 
-== link:https://github.com/sebhoss/generic-types/compare/generic-types-2.0.0-20160702231934...master[Unreleased]
+== link:++https://github.com/sebhoss/generic-types/compare/generic-types-2.0.0-20160702231934...master++[Unreleased]
 
-== link:https://github.com/{github-org}/{project-name}/compare/{project-name}-1.0.0...{project-name}-2.0.0-20160702231934[2.0.0] - 2016-07-02
+== link:++https://github.com/{github-org}/{project-name}/compare/{project-name}-1.0.0...{project-name}-2.0.0-20160702231934++[2.0.0] - 2016-07-02
 
 === Changed
 
