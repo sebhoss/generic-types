@@ -16,18 +16,24 @@ after_success:
 - mvn clean test jacoco:report coveralls:report
 
 addons:
+  # see https://scan.coverity.com/travis_ci
+  # see https://docs.travis-ci.com/user/coverity-scan/
   coverity_scan:
     project:
       name: "sebhoss/generic-types"
       description: "Build submitted via Travis CI"
-    notification_email: mail@shoss.de
+    notification_email: "metio@googlegroups.com"
     build_command_prepend: "mvn clean"
-    build_command:   "mvn -DskipTests=true compile"
+    build_command: "mvn -DskipTests=true compile"
     branch_pattern: master
 
-# see https://docs.travis-ci.com/user/notifications/#IRC-notification
+# see https://docs.travis-ci.com/user/notifications/
 notifications:
+  # see https://docs.travis-ci.com/user/notifications/#IRC-notification
   irc: "chat.freenode.net#metio.wtf"
+  # see https://docs.travis-ci.com/user/notifications/#Email-notifications
+  email:
+    - "metio@googlegroups.com"
 
 env:
   global:
