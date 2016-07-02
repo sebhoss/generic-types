@@ -94,10 +94,12 @@
     <dependency>
       <groupId>de.xn--ho-hia.quality</groupId>
       <artifactId>suppress-warnings</artifactId>
+      <version>4.0.0-20160619211629</version>
     </dependency>
     <dependency>
       <groupId>de.xn--ho-hia.quality</groupId>
       <artifactId>null-analysis</artifactId>
+      <version>3.0.1-20160702153702</version>
     </dependency>
   </dependencies>
 
