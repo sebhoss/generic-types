@@ -141,26 +141,21 @@ public class GenericTypesTest {
     }
 
     /**
-     * Ensures that the constructor of the {@link GenericTypes} class is
-     * private.
+     * Ensures that the constructor of the {@link GenericTypes} class is private.
      * <p>
-     * The class should never be instantiated. Instead use the static factory
-     * methods to construct storage units.
+     * The class should never be instantiated. Instead use the static factory methods to construct storage units.
      *
      * @throws NoSuchMethodException
-     *             Should not fail in case the StorageUnits class has a
-     *             constructor..
+     *             Should not fail in case the StorageUnits class has a constructor..
      * @throws IllegalAccessException
-     *             Should not fail in case the StorageUnits class has a
-     *             constructor..
+     *             Should not fail in case the StorageUnits class has a constructor..
      * @throws InvocationTargetException
-     *             Should not fail in case the StorageUnits class has a
-     *             constructor..
+     *             Should not fail in case the StorageUnits class has a constructor..
      * @throws InstantiationException
-     *             Should not fail in case the StorageUnits class has a
-     *             constructor..
+     *             Should not fail in case the StorageUnits class has a constructor..
      */
     @Test
+    @SuppressWarnings(CompilerWarnings.NULL)
     public void shouldDeclarePrivateConstructor()
             throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         // Given
