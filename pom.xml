@@ -24,7 +24,7 @@
   <!--                               COORDINATES                               -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!-- https://maven.apache.org/pom.html#Maven_Coordinates -->
-  <groupId>de.xn__ho_hia.utils.types</groupId>
+  <groupId>de.xn--ho-hia.utils.types</groupId>
   <artifactId>generic-types</artifactId>
   <version>2.0.0-${revision}</version>
 
