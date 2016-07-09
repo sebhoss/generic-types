@@ -16,6 +16,7 @@ SHELL = /bin/sh
 # INTERNAL VARIABLES #
 ######################
 TIMESTAMP := $(shell /bin/date "+%Y%m%d%H%M%S")
+CURRENT_YEAR := $(shell /bin/date "+%Y")
 USERID := $(shell id -u)
 GREEN  := $(shell tput -Txterm setaf 2)
 WHITE  := $(shell tput -Txterm setaf 7)
@@ -43,7 +44,6 @@ HELP_FUN = \
 .PHONY: all
 all: help
 
-.PHONY: help
 help: ##@other Show this help
 	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
 
@@ -70,6 +70,12 @@ update-parent: ##@maintenance Updates the Maven parent to its latest version
 	mvn versions:update-parent -U -DgenerateBackupPoms=false
 	git add pom.xml
 	git commit pom.xml -s -S -m 'Update to latest parent'
+
+.PHONY: update-maintenance-badge
+update-maintenance-badge: ##@maintenance Updates the maintenance badge to the current year
+	sed -i -e "s/maintenance\/yes\/[0-9]*/maintenance\/yes\/$(CURRENT_YEAR)/" README.asciidoc
+	git add README.asciidoc
+	git commit pom.xml -s -S -m 'Update maintenance badge'
 
 .PHONY: release-into-local-nexus
 release-into-local-nexus: ##@release Release all artifacts into a local nexus
